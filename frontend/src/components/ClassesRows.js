@@ -11,7 +11,7 @@ export default class ClassesRows extends React.Component {
                 <td>{this.props.classid}</td>
                 <td>{this.props.classname}</td>
                 <td>{this.props.facultyid}</td>
-                <td>{this.props.studentno}</td>
+                <td>{this.props.studentNo}</td>
                 <td>{this.props.buildingid}</td>
                 <td>{this.props.classroomNo}</td>
                 <td>{this.props.time}</td>
