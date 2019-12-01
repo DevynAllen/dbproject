@@ -33,8 +33,8 @@ export default class Home extends React.Component {
         return (
             <div>
                 <h1>DBMS Group Project</h1>
-                <table class="table">
-                    <thead>
+                <table className="table">
+                    <thead className="thead-dark">
                         <tr>
                             <th scope="col">crn</th>
                             <th scope="col">classid</th>
@@ -48,7 +48,9 @@ export default class Home extends React.Component {
                             <th scope="col">gradeID</th>
                         </tr>
                     </thead>
-                    {classesTable}
+                    <tbody>
+                        {classesTable}
+                    </tbody>
                 </table>
 
             </div>
