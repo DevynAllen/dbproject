@@ -229,6 +229,16 @@ app.get('/insertgrades', function (req, res) {
     })
 })
 
+// Select buildings
+app.get('/getbuildings', function (req, res) {
+    let sql = 'SELECT * FROM buildings';
+    let query = db.query(sql, (err, results) => {
+        if (err) throw err;
+        console.log(results);
+        res.send(results)
+    })
+})
+
 // Select classes
 app.get('/getclasses', function (req, res) {
     let sql = 'SELECT * FROM classes';
@@ -238,6 +248,48 @@ app.get('/getclasses', function (req, res) {
         res.send(results)
     })
 })
+
+// Select colleges
+app.get('/getcolleges', function (req, res) {
+    let sql = 'SELECT * FROM Colleges';
+    let query = db.query(sql, (err, results) => {
+        if (err) throw err;
+        console.log(results);
+        res.send(results)
+    })
+})
+
+// Select Grades
+app.get('/getgrades', function (req, res) {
+    let sql = 'SELECT * FROM Grades';
+    let query = db.query(sql, (err, results) => {
+        if (err) throw err;
+        console.log(results);
+        res.send(results)
+    })
+})
+
+// Select Students
+app.get('/getstudents', function (req, res) {
+    let sql = 'SELECT * FROM Students';
+    let query = db.query(sql, (err, results) => {
+        if (err) throw err;
+        console.log(results);
+        res.send(results)
+    })
+})
+
+// Select Teachers
+app.get('/getteachers', function (req, res) {
+    let sql = 'SELECT * FROM Teachers';
+    let query = db.query(sql, (err, results) => {
+        if (err) throw err;
+        console.log(results);
+        res.send(results)
+    })
+})
+
+
 
 app.listen('3001', () => {
     console.log('Server started on port 3001');
