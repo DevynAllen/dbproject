@@ -229,48 +229,13 @@ app.get('/insertgrades', function (req, res) {
     })
 })
 
-//Insert Post 2
-app.get('/addpost2', function (req, res) {
-    let post = {
-        title: 'Post Two',
-        body: 'This is post number Two'
-    }
-    let sql = 'INSERT INTO posts SET ?';
-    let query = db.query(sql, post, (err, result) => {
-        if (err) throw err;
-        console.log(result);
-        res.send('Post 2 added...')
-    })
-})
-
-// Select posts
+// Select classes
 app.get('/getclasses', function (req, res) {
     let sql = 'SELECT * FROM classes';
     let query = db.query(sql, (err, results) => {
         if (err) throw err;
         console.log(results);
         res.send(results)
-    })
-})
-
-// Select single post
-app.get('/getpost/:id', function (req, res) {
-    let sql = `SELECT * FROM posts WHERE id = ${req.params.id}`;
-    let query = db.query(sql, (err, result) => {
-        if (err) throw err;
-        console.log(result);
-        res.send('Post fetched...')
-    })
-})
-
-// Update post
-app.get('/updatepost/:id', function (req, res) {
-    let newTitle = 'Updated Title';
-    let sql = `UPDATE posts SET title = '${newTitle}' WHERE id = ${req.params.id}`;
-    let query = db.query(sql, (err, result) => {
-        if (err) throw err;
-        console.log(result);
-        res.send('Post updated...')
     })
 })
 
