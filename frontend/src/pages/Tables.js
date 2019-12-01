@@ -1,12 +1,14 @@
 import React from 'react';
 import axios from 'axios';
-import './styles/home.css'
 import ClassesRows from '../components/ClassesRows'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Typography from '@material-ui/core/Typography';
+import '../styles.css'
 
-export default class Home extends React.Component {
+export default class Tables extends React.Component {
+
     state = {
-        classesTable: []
+        classesTable: [],
+        buildingsTable: []
     }
 
     componentDidMount() {
@@ -22,18 +24,16 @@ export default class Home extends React.Component {
     }
 
     render() {
-
-
         const classesTable = this.state.classesTable.map((item, idx) =>
             (<ClassesRows key={idx} crn={item.crn} classid={item.classid} classname={item.classname} facultyid={item.facultyid} studentNo={item.studentNo} buildingid={item.buildingid} classroomNo={item.classroomNo} time={item.time} weekdays={item.weekdays} gradeID={item.gradeID} />)
         )
 
-        //place {classesTable} below
-
         return (
-            <div>
-                <h1>DBMS Group Project</h1>
-                <table className="table">
+            <div className="table-responsive">
+                <Typography variant="h5" style={{ marginTop: 100 }}>
+                    Classes
+                </Typography>
+                <table className="table table-striped">
                     <thead className="thead-dark">
                         <tr>
                             <th scope="col">crn</th>
@@ -48,12 +48,12 @@ export default class Home extends React.Component {
                             <th scope="col">gradeID</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="">
                         {classesTable}
                     </tbody>
                 </table>
 
-            </div>
+            </div >
         )
     }
 }

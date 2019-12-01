@@ -1,18 +1,18 @@
 import React from 'react';
-import Home from './pages/Home'
+import Tables from './pages/Tables'
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar />
+
         <Switch>
-          <Route exact={true} path='/' render={() => (
-            <div>
-              <Home />
-            </div>
-          )} />
+          <Route exact={true} path="/" component={Tables} />
         </Switch>
       </Router>
     </div>
