@@ -289,7 +289,60 @@ app.get('/getteachers', function (req, res) {
     })
 })
 
+//Query 1
+//1.list the names of  all teachers who teach classes with a class average higher than 80% 
+app.get('/query1', function (req, res) {
+    let sql = 'SELECT teacherfname, teacherlname FROM teachers WHERE facultyid = SOME (SELECT Facultyid FROM grades WHERE classavg  > 80)';
+    let query = db.query(sql, (err, results) => {
+        if (err) throw err;
+        console.log(results);
+        res.send(results)
+    })
+})
 
+//Query 2
+//List full details of students who attend a college where the dean's first name is Pamela
+app.get('/query2', function (req, res) {
+    let sql = "Select * from students where collegeid in (select collegeid from colleges where Deanfname = 'Pamela')";
+    let query = db.query(sql, (err, results) => {
+        if (err) throw err;
+        console.log(results);
+        res.send(results)
+    })
+})
+
+//Query 3
+//List the names and gpa’s of all the Students in the College of Mathematics.
+app.get('/query3', function (req, res) {
+    let sql = "Select studentfname, studentlname, gpa from students where collegeid = Any (select collegeid from colleges where collegename = 'Mathematics')";
+    let query = db.query(sql, (err, results) => {
+        if (err) throw err;
+        console.log(results);
+        res.send(results)
+    })
+})
+
+//Query 4
+//Fname and lname of teachers that teach app development, or web design.
+app.get('/query4', function (req, res) {
+    let sql = "select teacherfname, teacherlname from teachers where facultyid in (select facultyid from classes where classname = 'App Development' or classname = 'Web Design')";
+    let query = db.query(sql, (err, results) => {
+        if (err) throw err;
+        console.log(results);
+        res.send(results)
+    })
+})
+
+//Query 5
+//List the number of students in chuck Fey’s class
+app.get('/query5', function (req, res) {
+    let sql = "select studentNo from classes where facultyid in (select facultyid from teachers where teacherfname = 'Chuck' and teacherlname ='Fey')";
+    let query = db.query(sql, (err, results) => {
+        if (err) throw err;
+        console.log(results);
+        res.send(results)
+    })
+})
 
 app.listen('3001', () => {
     console.log('Server started on port 3001');

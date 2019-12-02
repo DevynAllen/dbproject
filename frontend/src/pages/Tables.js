@@ -3,7 +3,7 @@ import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
 import '../styles.css'
 
-import BuildingsRows from '../components/BuildingsRow';
+import BuildingsRows from '../components/BuildingsRows';
 import ClassesRows from '../components/ClassesRows'
 import CollegesRows from '../components/CollegesRows'
 import GradesRows from '../components/GradesRows'
@@ -109,7 +109,28 @@ export default class Tables extends React.Component {
 
         return (
             <div className="table-responsive">
-                <Typography variant="h5" style={{ marginTop: 100 }}>
+                <Typography variant="h4" style={{ marginTop: 100 }}>
+                    Database Tables:
+                </Typography>
+
+                <Typography color="secondary" variant="h5" style={{ marginTop: 20 }}>
+                    Buildings Table
+                </Typography>
+                <table className="table table-striped">
+                    <thead className="thead-dark">
+                        <tr>
+                            <th scope="col">buildingid</th>
+                            <th scope="col">buildingname</th>
+                            <th scope="col">classrooms</th>
+                            <th scope="col">department</th>
+                        </tr>
+                    </thead>
+                    <tbody className="">
+                        {buildingsTable}
+                    </tbody>
+                </table>
+
+                <Typography color="secondary" variant="h5" style={{ marginTop: 100 }}>
                     Classes Table
                 </Typography>
                 <table className="table table-striped">
@@ -132,26 +153,7 @@ export default class Tables extends React.Component {
                     </tbody>
                 </table>
 
-
-
-                <Typography variant="h5" style={{ marginTop: 100 }}>
-                    Buildings Table
-                </Typography>
-                <table className="table table-striped">
-                    <thead className="thead-dark">
-                        <tr>
-                            <th scope="col">buildingid</th>
-                            <th scope="col">buildingname</th>
-                            <th scope="col">classrooms</th>
-                            <th scope="col">department</th>
-                        </tr>
-                    </thead>
-                    <tbody className="">
-                        {buildingsTable}
-                    </tbody>
-                </table>
-
-                <Typography variant="h5" style={{ marginTop: 100 }}>
+                <Typography color="secondary" variant="h5" style={{ marginTop: 100 }}>
                     Colleges Table
                 </Typography>
                 <table className="table table-striped">
@@ -168,7 +170,7 @@ export default class Tables extends React.Component {
                     </tbody>
                 </table>
 
-                <Typography variant="h5" style={{ marginTop: 100 }}>
+                <Typography color="secondary" variant="h5" style={{ marginTop: 100 }}>
                     Grades Table
                 </Typography>
                 <table className="table table-striped">
@@ -187,7 +189,7 @@ export default class Tables extends React.Component {
                     </tbody>
                 </table>
 
-                <Typography variant="h5" style={{ marginTop: 100 }}>
+                <Typography color="secondary" variant="h5" style={{ marginTop: 100 }}>
                     Students Table
                 </Typography>
                 <table className="table table-striped">
@@ -208,7 +210,7 @@ export default class Tables extends React.Component {
                     </tbody>
                 </table>
 
-                <Typography variant="h5" style={{ marginTop: 100 }}>
+                <Typography color="secondary" variant="h5" style={{ marginTop: 100 }}>
                     Teachers Table
                 </Typography>
                 <table className="table table-striped">
