@@ -1,5 +1,5 @@
 # dbproject
-DBMS extra credit. Instead of using the traditional mySQL / PHP Approach, I decided to use mySQL, React, Node, and Express. This was all made possible due to the 'mysql' npm module.
+DBMS extra credit. Instead of using the traditional mySQL / PHP Approach, I decided to use mySQL, React, Node, and Express.
 
 The react project will run fine, but the data will not show because the database is ran locally. In order for this to work on your machine you must download phpmyadmin, install all the modules in the project (run "npm install"), and create a new DB on your local machine.
 
