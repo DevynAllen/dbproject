@@ -13,7 +13,6 @@ export class Navbar extends Component {
                 <Toolbar className="nav-container">
                     <Button color="inherit" component={Link} to="/">Tables</Button>
                     <Button color="inherit" component={Link} to="/Queries">Queries</Button>
-                    <Button color="inherit" component={Link} to="/signup">Signup</Button>
 
                 </Toolbar>
             </AppBar>
